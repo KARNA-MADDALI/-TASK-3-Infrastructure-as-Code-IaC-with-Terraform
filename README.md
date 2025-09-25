@@ -1,37 +1,148 @@
-# Terraform + Docker + Flask — Recruiter-ready Project
+# Recruiter-Ready Project: Terraform + Docker + Flask Web App
 
-This repo provisions a polished Flask web app inside Docker using Terraform.
-Features:
-- Responsive static frontend (landing page) + Flask backend API
-- Endpoints: `/`, `/health`, `/info`, `/metrics`
-- Multi-stage Dockerfile for small runtime image
-- Terraform with Docker provider to build image & run container locally
-- GitHub Actions workflows: Terraform validation and CI pipeline template
-- Clear README, Makefile, and example `terraform.tfvars`
+## Overview
 
-## Quick Start (WSL recommended)
-1. Ensure Docker (Docker Desktop) and Terraform installed.
-2. Clone repo and `cd` into it.
-3. (Windows Git Bash users) set DOCKER host before running terraform:
-   ```
-   export TF_VAR_docker_host="npipe:////./pipe/docker_engine"
-   ```
-   or run inside WSL and keep default.
+This project demonstrates **Infrastructure as Code (IaC)** by provisioning a **Flask web application** inside a **Docker container** using **Terraform**.  
+It is designed to impress recruiters with clean code, best practices, and a fully functional landing page.
 
-4. Initialize & apply:
-   ```
-   terraform init
-   terraform plan -out=tfplan
-   terraform apply tfplan
-   ```
+**Key Features:**
+- Deploys a Flask app with **responsive frontend** and multiple backend API endpoints.
+- Runs inside **Docker** and is managed via **Terraform**.
+- Multi-stage Dockerfile for optimized image size.
+- Non-root user and healthcheck for container best practices.
+- `/health`, `/info`, `/metrics`, `/api/hello` endpoints for demo and observability.
+- CI template using **GitHub Actions** for Terraform validation and Docker build tests.
 
-5. Open `http://localhost:8080` to view the landing page.
-6. Destroy when done:
-   ```
-   terraform destroy -auto-approve
-   ```
+---
 
-## What to show recruiters
-- Live demo: run locally and open the landing page.
-- Show `terraform plan` → `apply` logs and the container running.
-- Point out multi-stage Dockerfile, small image size, and infra-as-code workflow.
+## Project Structure
+terraform-docker-flask/
+│
+├─ app/
+│ ├─ Dockerfile
+│ ├─ requirements.txt
+│ ├─ app.py
+│ ├─ templates/
+│ │ └─ index.html
+│ └─ static/
+│ └─ placeholder.txt
+│
+├─ main.tf # Terraform code to build image & container
+├─ variables.tf # Terraform variables
+├─ outputs.tf # Terraform outputs
+├─ terraform.tfvars.example # Example variables
+├─ Makefile # Quick commands for terraform
+├─ README.md # This file
+└─ .github/workflows/ # GitHub Actions templates
+├─ terraform-check.yml
+└─ ci-docker-build.yml  
+
+---
+
+## Prerequisites
+
+- **Terraform ≥ 1.3.0**
+- **Docker** (Docker Desktop for Windows / Docker Engine for Linux/WSL)
+- Optional: **WSL** if using Windows for smooth Linux container compatibility
+
+---
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/<your-username>/terraform-docker-flask.git
+cd terraform-docker-flask
+2. Set Docker Host (Windows only)
+export TF_VAR_docker_host="npipe:////./pipe/docker_engine"
+
+
+Linux/WSL users can use the default unix:///var/run/docker.sock.
+
+3. Initialize Terraform
+terraform init
+
+4. Plan the Infrastructure
+terraform plan -out=tfplan
+
+5. Apply the Infrastructure
+terraform apply tfplan
+
+6. Open the App
+
+Open in your browser:
+
+http://localhost:8080
+
+
+You should see the landing page, and the following endpoints are available:
+
+/ → Landing page
+
+/api/hello → API returning a welcome message
+
+/health → Health status
+
+/info → Container and host info
+
+/metrics → Custom metrics
+
+7. Destroy the Infrastructure
+
+After demo:
+
+terraform destroy -auto-approve
+
+How It Works
+
+Terraform builds the Docker image from app/Dockerfile.
+
+Terraform creates a container from the built image.
+
+Container exposes port 5000 internally and maps to host port 8080.
+
+Healthcheck ensures the app is running.
+
+Outputs provide the container ID and app URL.
+
+Recruiter Highlights
+
+Demonstrates IaC using Terraform.
+
+Shows Docker best practices:
+
+Multi-stage Dockerfile for optimized size
+
+Non-root user
+
+Healthcheck
+
+Shows Flask app with frontend + backend endpoints.
+
+Includes CI/CD workflow templates (GitHub Actions).
+
+Easy to run locally → perfect for live demo.
+
+Clean folder structure, Makefile, and README.md for professional submission.
+
+Screenshots
+
+(Optional: Add screenshots of the app running, Terraform plan/apply logs, or container info)
+
+Notes
+
+Windows users must ensure Docker Desktop is running and TF_VAR_docker_host is set correctly.
+
+Dependencies installed directly from PyPI to simplify the build process.
+
+App runs using Gunicorn with 2 workers for production-style demo.
+
+Author
+
+Maddali Karna
+DevSecOps Engineer | Cloud & IaC Enthusiast
+Email: maddalikarna9@gmail.com
+
+GitHub: https://github.com/Karna-Maddali
+
