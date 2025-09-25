@@ -13,6 +13,10 @@ It is designed to impress recruiters with clean code, best practices, and a full
 - `/health`, `/info`, `/metrics`, `/api/hello` endpoints for demo and observability.
 - CI template using **GitHub Actions** for Terraform validation and Docker build tests.
 ---
+## Screenshots
+ <img src="./images/result.png" alt="screenshot" width="600"/>
+ ## Screenshots
+ <img src="./images/cli-result.png" alt="screenshot" width="600"/>
 
 ## 📂 Project Structure
 
@@ -126,8 +130,6 @@ Easy to run locally → perfect for live demo.
 
 Clean folder structure, Makefile, and README.md for professional submission.
 
-## Screenshots
- <img src="./images/result.png" alt="screenshot" width="600"/>
 
 Author
 
