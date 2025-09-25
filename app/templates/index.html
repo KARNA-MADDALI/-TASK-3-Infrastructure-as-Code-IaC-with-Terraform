@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Terraform + Docker Demo</title>
+  <style>
+    body { font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; padding:40px; background:#f6f8fa; color:#0b1220;}
+    .card { max-width:900px; margin:auto; background:white; border-radius:12px; padding:28px; box-shadow:0 10px 30px rgba(13,20,30,0.08);}
+    header { display:flex; align-items:center; gap:16px;}
+    .logo { width:72px; height:72px; background:linear-gradient(135deg,#6ee7b7,#60a5fa); border-radius:12px; display:flex; align-items:center; justify-content:center; color:white; font-weight:700;}
+    h1 { margin:0; font-size:24px;}
+    .meta { color:#475569; margin-top:8px;}
+    .grid { display:flex; gap:12px; margin-top:20px;}
+    .btn { padding:10px 14px; border-radius:8px; text-decoration:none; background:#111827; color:white; display:inline-block;}
+    footer { text-align:center; margin-top:26px; color:#64748b; font-size:14px;}
+  </style>
+</head>
+<body>
+<div class="card">
+  <header>
+    <div class="logo">TF</div>
+    <div>
+      <h1>Terraform + Docker — Recruiter Demo</h1>
+      <div class="meta">Small, production-minded Flask app running in Docker via Terraform</div>
+    </div>
+  </header>
+
+  <p style="margin-top:18px;">
+    This is a polished landing page that calls a backend API. Use this to demo:
+  </p>
+  <ul>
+    <li>IaC: Terraform building & running the container</li>
+    <li>Container best practices: non-root user, healthcheck, multi-stage build</li>
+    <li>Observability: /metrics endpoint and logs</li>
+  </ul>
+
+  <div class="grid">
+    <a class="btn" href="/api/hello">Call API</a>
+    <a class="btn" href="/health">Health</a>
+    <a class="btn" href="/info">Info</a>
+    <a class="btn" href="/metrics">Metrics</a>
+  </div>
+
+  <footer>
+    <small>Show your recruiter the Terraform plan → apply flow and then this page running locally.</small>
+  </footer>
+</div>
+</body>
+</html>

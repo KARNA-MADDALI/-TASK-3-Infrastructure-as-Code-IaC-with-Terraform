@@ -1,0 +1,21 @@
+name: CI - Build & Test Docker Image (Template)
+on:
+  push:
+    paths:
+      - 'app/**'
+      - 'Dockerfile'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      - name: Build Docker image (local)
+        run: docker build -t terraform-flask-app:test ./app
+      - name: Run container and test health
+        run: |
+          docker run -d --rm -p 8081:5000 --name tf-test terraform-flask-app:test
+          sleep 3
+          curl -f http://localhost:8081/health
+          docker stop tf-test
