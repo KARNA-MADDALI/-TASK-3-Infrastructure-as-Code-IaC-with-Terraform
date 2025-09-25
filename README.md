@@ -126,17 +126,8 @@ Easy to run locally → perfect for live demo.
 
 Clean folder structure, Makefile, and README.md for professional submission.
 
-Screenshots
-
-(Optional: Add screenshots of the app running, Terraform plan/apply logs, or container info)
-
-Notes
-
-Windows users must ensure Docker Desktop is running and TF_VAR_docker_host is set correctly.
-
-Dependencies installed directly from PyPI to simplify the build process.
-
-App runs using Gunicorn with 2 workers for production-style demo.
+## Screenshots
+ <img src="./images/result.png" alt="screenshot" width="600"/>
 
 Author
 
