@@ -14,9 +14,9 @@ It is designed to impress recruiters with clean code, best practices, and a full
 - CI template using **GitHub Actions** for Terraform validation and Docker build tests.
 ---
 ## Screenshots
- <img src="./images/result.png" alt="screenshot" width="600"/>
+ <img src="./images/result.png" alt="screenshot" width="800"/>
  ## Screenshots
- <img src="./images/cli-result.png" alt="screenshot" width="600"/>
+ <img src="./images/cli-result.png" alt="screenshot" width="800"/>
 
 ## 📂 Project Structure
 
