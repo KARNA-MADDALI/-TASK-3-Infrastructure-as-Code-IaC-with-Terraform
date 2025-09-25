@@ -12,32 +12,32 @@ It is designed to impress recruiters with clean code, best practices, and a full
 - Non-root user and healthcheck for container best practices.
 - `/health`, `/info`, `/metrics`, `/api/hello` endpoints for demo and observability.
 - CI template using **GitHub Actions** for Terraform validation and Docker build tests.
-
 ---
 
-## Project Structure
+## 📂 Project Structure
+
+```bash
 terraform-docker-flask/
 │
 ├─ app/
-│ ├─ Dockerfile
-│ ├─ requirements.txt
-│ ├─ app.py
-│ ├─ templates/
-│ │ └─ index.html
-│ └─ static/
-│ └─ placeholder.txt
+│  ├─ Dockerfile
+│  ├─ requirements.txt
+│  ├─ app.py
+│  ├─ templates/
+│  │   └─ index.html
+│  └─ static/
+│      └─ placeholder.txt
 │
-├─ main.tf # Terraform code to build image & container
-├─ variables.tf # Terraform variables
-├─ outputs.tf # Terraform outputs
+├─ main.tf                  # Terraform code to build image & container
+├─ variables.tf             # Terraform variables
+├─ outputs.tf               # Terraform outputs
 ├─ terraform.tfvars.example # Example variables
-├─ Makefile # Quick commands for terraform
-├─ README.md # This file
-└─ .github/workflows/ # GitHub Actions templates
-├─ terraform-check.yml
-└─ ci-docker-build.yml  
+├─ Makefile                 # Quick commands for terraform
+├─ README.md                # This file
+└─ .github/workflows/       # GitHub Actions templates
+   ├─ terraform-check.yml
+   └─ ci-docker-build.yml
 
----
 
 ## Prerequisites
 
